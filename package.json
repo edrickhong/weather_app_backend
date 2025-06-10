@@ -21,7 +21,6 @@
 		"start": "node dist/server.js",
 		"build": "tsc"
 	},
-
 	"engine": {
 		"node": "20.x"
 	}
