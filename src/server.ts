@@ -9,7 +9,7 @@ import {
 } from './db.js';
 
 const app: Application = express();
-const PORT = 3001;
+const PORT = 4000;
 
 initDB();
 
