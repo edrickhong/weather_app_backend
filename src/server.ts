@@ -57,7 +57,15 @@ app.delete('/api/weather/:id', async (req: Request, res: Response): Promise<void
   res.json({ message: 'Deleted' });
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Backend running at http://localhost:${PORT}`);
+
+const args = process.argv.slice(2);
+const arg1 = args.length !== 0 ? args[0] : '';
+console.log("ARGS:",args);
+const is_deploy = arg1 == '--deploy';
+
+const host = is_deploy ? '0.0.0.0': 'localhost';
+
+app.listen(PORT, host, () => {
+  console.log(`✅ Backend running at http://${host}:${PORT}`);
 });
 
